@@ -14,7 +14,7 @@ const SearchExercies = () => {
           border:'none',
           borderRadius:'4px'
         },
-        width: {lg: '1170px', xs:'350px'},
+        width: {lg: '800px', xs:'350px'},
         backgroundColor: '#fff'
         , borderRadius:'40px'
       }}
@@ -23,6 +23,18 @@ const SearchExercies = () => {
       onChange={(e) => {}}
       placeholder="Search Exercies"
       type="text" />
+      <Button className='search-btn'
+      sx={{
+        bgcolor:'#ff2625'
+        , color:'#fff',
+        textTransform: 'none',
+        width: {lg: '160px', xs:'80px'},
+        fontSize: {lg:'20px', xs:'14px' },
+        height:'54px',
+        position:'absolute'
+      }}>
+        Search
+      </Button>
     </Box>
    </Stack>
   )
