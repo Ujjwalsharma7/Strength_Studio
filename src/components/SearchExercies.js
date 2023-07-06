@@ -7,11 +7,20 @@ import { exerciseOptions, fetchData } from "../utils/fetchData"
 const SearchExercies = () => {
 const [search, setSearch] = useState('');
 
+const [exercises, setExercises] = useState('');
+
 const handleSearch = async () => {
   if(search){
     const exerciseData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
 
-    console.log(exerciseData);
+    const searchedExercises = exerciseData.filter(
+      (exercise) => exercise.name.toLocaleLowerCase().includes(search)
+      ||  exercise.target.toLocaleLowerCase().includes(search)
+      ||  exercise.equipment.toLocaleLowerCase().includes(search)
+      ||  exercise.bodypart.toLocaleLowerCase().includes(search)
+    );
+    setSearch('');
+    setExercises(searchedExercises);
   }
 }
   return (
