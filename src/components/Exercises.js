@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from "react"
-import { Pagination } from '@mui/material/Pagination';
+import  Pagination from '@mui/material/Pagination';
 import { Box, Stack, Typography } from '@mui/material';
 import ExerciseCard from './ExerciseCard';
 
@@ -22,6 +22,15 @@ const Exercises = ({exercises, setExercises, bodyPart}) => {
       {exercises.map((exercise, index) => (
         <ExerciseCard key={index} exercise={exercise}/>
       ))}
+    </Stack>
+    <Stack mt='100px' alignItems='center'>
+        <Pagination 
+        color='standard'
+        shape='rounded'
+        defaultPage={1}
+        count={Math.ceil(exercises.lenght / 9)}
+        
+        />
     </Stack>
    </Box>
   )
