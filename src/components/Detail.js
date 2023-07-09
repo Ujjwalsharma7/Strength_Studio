@@ -31,7 +31,7 @@ const Detail = ({exerciseDetail}) => {
                 {name}
             </Typography>
             <Typography textTransform='capitalize'>
-                Exercises keep in shape. {name} {` `} is one of the best
+                Exercises keep you in shape. {name} {` `} is one of the best
                 exercises to target your {target}. It will help you improve your mood and gain energy.
             </Typography>
             {extraDetail.map((item) => (
