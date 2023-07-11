@@ -1,12 +1,17 @@
 import React from 'react'
+import { Box, Stack, Typography } from '@mui/material'
 
 
 const BMI = () => {
   
   return (
-    <div id='BMI'>
-      BMI
-    </div>
+  <Box id='BMI' >
+    <Stack>
+        <Typography variant='h3'>
+            Know Your Body Mass Index
+        </Typography>
+    </Stack>
+  </Box>
   )
 }
 
