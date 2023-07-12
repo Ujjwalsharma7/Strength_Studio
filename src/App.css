@@ -105,6 +105,10 @@ body {
     height: 381px;
     text-decoration: none;
   }
+
+  .textfield{
+    color: #FF2625;
+  }
   
   @media screen and (max-width:1200px) {
     .detail-image {
