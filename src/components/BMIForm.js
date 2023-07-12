@@ -25,6 +25,12 @@ const BMIForm = () => {
             setBmi(bmi.toFixed(1));
         }
     }
+
+    let reload = (event) => {
+        setWeight(0);
+        setHeight(0);
+        setBmi('');
+    }
     return (
         <Box
             component="form"
@@ -33,6 +39,7 @@ const BMIForm = () => {
             }}
             noValidate
             autoComplete="off"
+            onSubmit={calcBmi}
         >
             <Stack direction='row'>
 
@@ -72,8 +79,10 @@ const BMIForm = () => {
 
 
             </Stack>
-
-            <Button variant='contained' type='submit' color='secondary' sx={{ margin: '20px' }} onClick={calcBmi}>Calculate</Button>
+            <Stack direction='row'>
+            <Button variant='contained' type='submit' color='secondary' sx={{ margin: '20px', width:'150px'}} >Calculate</Button>
+            <Button variant='outlined' type='submit' color='secondary' sx={{ margin: '20px', width:'150px'}} onClick={reload} >Reload</Button>
+            </Stack>
             <Stack sx={{justifyContent:'center', alignItems: 'center'}}>
             <Typography variant='h4'>Your BMI is: {bmi}</Typography>
             <Typography variant='h6'>Message</Typography> 
