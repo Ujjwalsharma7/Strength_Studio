@@ -23,6 +23,14 @@ const BMIForm = () => {
 
             let bmi = (weight/((height*height)/10000));
             setBmi(bmi.toFixed(1));
+
+            if(bmi<18){
+                setMessage('You are underweight')
+            } else  if(bmi>18 && bmi<=25){
+                setMessage('You are a healthy person.')
+            } else  if(bmi>25){
+                setMessage('You are overweight')
+            }
         }
     }
 
@@ -85,7 +93,7 @@ const BMIForm = () => {
             </Stack>
             <Stack sx={{justifyContent:'center', alignItems: 'center'}}>
             <Typography variant='h4'>Your BMI is: {bmi}</Typography>
-            <Typography variant='h6'>Message</Typography> 
+            <Typography variant='h6'>{message}</Typography> 
             <Stack className='img-container'></Stack>
             </Stack>
     </Box>
