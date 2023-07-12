@@ -1,40 +1,50 @@
 import React from 'react'
-import { Box, TextField,  } from '@mui/material'
+import { Box, TextField, Stack, Button} from '@mui/material'
+
+
+
 const BMIForm = () => {
+
   return (
     <Box
       component="form"
       sx={{
-        '& .MuiTextField-root': { m: 1, width: '30ch' },
+        '& .MuiTextField-root': { m: 1, width: '50ch' },
       }}
       noValidate
       autoComplete="off"
     >
-      <div>
+     <Stack direction='row'>
+
+<Stack sx={{margin:'20px'}}>
+
        
         <TextField
          type='number'
-          id="weight"
-          label="Weight"
-          defaultValue=""
-          helperText="(in Kgs)"
+         id="weight"
+         label="Weight"
+         defaultValue=""
+         helperText="(in Kgs)"
          
-          color='error'
-        />
-      </div>
-      <div>
+         color='error'
+         />
+         </Stack>
+     
+         <Stack sx={{margin:'20px'}}>
       <TextField
          type='number'
-          id="hieght"
-          label="hieght"
-          defaultValue=""
-          helperText="(in cm)"
-       
-          color='error'
-        />
-      </div>
+         id="hieght"
+         label="Hieght"
+         defaultValue=""
+         helperText="(in cm)"
+         color='error'
+         />
+     </Stack>
+
+    
+         </Stack>
    
-      
+         <Button variant='contained' color='secondary' sx={{margin: '20px'}}>Calculate</Button>
     </Box>
   )
 }
