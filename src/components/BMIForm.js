@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Box, TextField, Stack, Button, Typography } from '@mui/material'
-
+import healthy from '../assets/images/healthy.png'
+import over from '../assets/images/overweight.png'
+import under from '../assets/images/underweight.png'
 
 
 
@@ -10,9 +12,10 @@ const BMIForm = () => {
     const [height, setHeight] = useState(0);
     const [bmi, setBmi] = useState('');
     const [message, setMessage] = useState('');
+   
 
 
-    let imgSrc = '';
+    
 
     let calcBmi = (event) => {
         event.preventDefault();
@@ -25,11 +28,14 @@ const BMIForm = () => {
             setBmi(bmi.toFixed(1));
 
             if(bmi<18){
-                setMessage('You are underweight')
+                setMessage('You are underweight');
+              
             } else  if(bmi>18 && bmi<=25){
-                setMessage('You are a healthy person.')
+                setMessage('You are a healthy person.');
+               
             } else  if(bmi>25){
                 setMessage('You are overweight')
+               
             }
         }
     }
@@ -94,7 +100,11 @@ const BMIForm = () => {
             <Stack sx={{justifyContent:'center', alignItems: 'center'}}>
             <Typography variant='h4'>Your BMI is: {bmi}</Typography>
             <Typography variant='h6'>{message}</Typography> 
-            <Stack className='img-container'></Stack>
+            <Stack className='img-container'>
+             {(bmi>25) ?  <img  src={over} alt='over'/> : <img src='' alt=''/>}  
+             {(bmi<18 && bmi>1) ?  <img  src={under} alt='under'/> : <img src='' alt='' />}  
+             {(bmi<25 && bmi>18) ?  <img  src={healthy} alt='healthy'/> : <img src='' alt='' />}  
+            </Stack>
             </Stack>
     </Box>
     )
