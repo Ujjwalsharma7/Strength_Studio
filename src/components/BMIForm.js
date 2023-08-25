@@ -44,6 +44,7 @@ const BMIForm = () => {
         setWeight(0);
         setHeight(0);
         setBmi('');
+        setMessage('');
     }
     return (
         <Box
@@ -64,7 +65,7 @@ const BMIForm = () => {
                         type='number'
                         id="weight"
                         label="Weight"
-                        defaultValue=""
+                      
                         helperText="(in Kgs)"
                         required
                         color='error'
@@ -80,7 +81,7 @@ const BMIForm = () => {
                         type='number'
                         id="height"
                         label="Height"
-                        defaultValue="0"
+                        
                         helperText="(in cm)"
                         color='error'
                         required
